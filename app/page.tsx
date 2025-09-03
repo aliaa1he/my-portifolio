@@ -450,268 +450,547 @@ const handleInsuranceNext = () => setInsuranceIndex((prev) => (prev + 1) % insur
       </section>
 
    {/* Projects Showcase Gallery section */}
-      <section id="projects" className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-foreground text-balance">
-              Featured Projects
-            </h2>
-            <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">
-              A collection of projects showcasing my expertise in fullstack development, from management systems to
-              realtime applications.
-            </p>
+<section id="projects" className="py-20">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center space-y-4 mb-16">
+      <h2 className="font-serif text-3xl lg:text-4xl font-bold text-foreground text-balance">
+        Featured Projects
+      </h2>
+      <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">
+        A collection of projects showcasing my expertise in fullstack development, from management systems to
+        realtime applications.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* The ITIANs Community */}
+      <Card className="group overflow-hidden border-border hover:shadow-lg transition-all duration-300">
+        <div className="relative overflow-hidden">
+          <div className="flex transition-transform duration-300 ease-in-out" id="carousel-itians">
+            <img
+              src={itiansImages[itiansIndex]}
+              alt={`The ITIANs Community Platform - Slide ${itiansIndex + 1}`}
+              className="w-full h-48 object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
+            />
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* The ITIANs Community */}
-            <Card className="group overflow-hidden border-border hover:shadow-lg transition-all duration-300">
-              <div className="relative overflow-hidden">
-                <div className="flex transition-transform duration-300 ease-in-out" id="carousel-itians">
-                  <img
-                    src={itiansImages[itiansIndex]}
-                    alt={`The ITIANs Community Platform - Slide ${itiansIndex + 1}`}
-                    className="w-full h-48 object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                {/* Dots */}
-                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
-                  {itiansImages.map((_, idx) => (
-                    <button
-                      key={idx}
-                      className={`w-2 h-2 rounded-full ${idx === itiansIndex ? "bg-primary" : "bg-white/40"} hover:bg-primary`}
-                      onClick={() => setItiansIndex(idx)}
-                    />
-                  ))}
-                </div>
-                {/* Arrows */}
-                <button onClick={handleItiansPrev} className="absolute left-2 top-1/2 -translate-y-1/2">◀</button>
-                <button onClick={handleItiansNext} className="absolute right-2 top-1/2 -translate-y-1/2">▶</button>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="font-serif text-xl font-semibold text-foreground">The ITIANs Community</h3>
-                <p className="text-muted-foreground text-sm">
-                  A realtime community platform built with Laravel backend, React frontend, and Supabase for realtime
-                  features. Includes RAG chatbot integration.
-                </p>
-                <div className="flex gap-2 pt-2">
-                  <Button asChild size="sm" variant="outline">
-                    <a href="https://github.com/aliaa11/Graduation-Project-From-ITI-BackEnd" target="_blank">
-                      <Github className="w-3 h-3 mr-1" /> Backend
-                    </a>
-                  </Button>
-                  <Button asChild size="sm" variant="outline">
-                    <a href="https://github.com/aliaa11/Graduation-Project-From-ITI-FrontEnd" target="_blank">
-                      <Github className="w-3 h-3 mr-1" /> Frontend
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Job Board Platform */}
-            <Card className="group overflow-hidden border-border hover:shadow-lg transition-all duration-300">
-              <div className="relative overflow-hidden">
-                <div className="flex transition-transform duration-300 ease-in-out" id="carousel-job">
-                  <img
-                    src={jobImages[jobIndex]}
-                    alt={`Job Board Platform - Slide ${jobIndex + 1}`}
-                    className="w-full h-48 object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
-                  {jobImages.map((_, idx) => (
-                    <button key={idx} className={`w-2 h-2 rounded-full ${idx === jobIndex ? "bg-accent" : "bg-white/40"}`}
-                      onClick={() => setJobIndex(idx)}
-                    />
-                  ))}
-                </div>
-                <button onClick={handleJobPrev} className="absolute left-2 top-1/2 -translate-y-1/2">◀</button>
-                <button onClick={handleJobNext} className="absolute right-2 top-1/2 -translate-y-1/2">▶</button>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="font-serif text-xl font-semibold text-foreground">Job Board Platform</h3>
-                <p className="text-muted-foreground text-sm">
-                  Full-featured job board enabling recruiters to post jobs and applicants to apply.
-                </p>
-                <div className="flex gap-2 pt-2">
-                  <Button asChild size="sm" variant="outline">
-                    <a href="https://github.com/omarokstar/job-board-laravel-api" target="_blank">
-                      <Github className="w-3 h-3 mr-1" /> Backend
-                    </a>
-                  </Button>
-                  <Button asChild size="sm" variant="outline">
-                    <a href="https://github.com/Esraa-mohamed1/job-board-laravel-vue" target="_blank">
-                      <Github className="w-3 h-3 mr-1" /> Frontend
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Kindergarten Management */}
-            <Card className="group overflow-hidden border-border hover:shadow-lg transition-all duration-300">
-              <div className="relative overflow-hidden">
-                <div className="flex transition-transform duration-300 ease-in-out" id="carousel-kindergarten">
-                  <img
-                    src={kindergartenImages[kindergartenIndex]}
-                    alt={`Kindergarten - Slide ${kindergartenIndex + 1}`}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform"
-                  />
-                </div>
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
-                  {kindergartenImages.map((_, idx) => (
-                    <button key={idx} className={`w-2 h-2 rounded-full ${idx === kindergartenIndex ? "bg-chart-4" : "bg-white/40"}`}
-                      onClick={() => setKindergartenIndex(idx)}
-                    />
-                  ))}
-                </div>
-                <button onClick={handleKindergartenPrev} className="absolute left-2 top-1/2 -translate-y-1/2">◀</button>
-                <button onClick={handleKindergartenNext} className="absolute right-2 top-1/2 -translate-y-1/2">▶</button>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="font-serif text-xl font-semibold text-foreground">Kindergarten Management</h3>
-                <p className="text-muted-foreground text-sm">
-                  Management system for kindergartens built with Angular + Node.js.
-                </p>
-                <div className="flex gap-2 pt-2">
-                  <Button asChild size="sm" variant="outline">
-                    <a href="https://github.com/aliaa11/School_System_Node.js" target="_blank">
-                      <Github className="w-3 h-3 mr-1" /> Backend
-                    </a>
-                  </Button>
-                  <Button asChild size="sm" variant="outline">
-                    <a href="https://github.com/aliaa11/School_System" target="_blank">
-                      <Github className="w-3 h-3 mr-1" /> Frontend
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Medical Project */}
-            <Card className="group overflow-hidden border-border hover:shadow-lg transition-all duration-300">
-              <div className="relative overflow-hidden">
-                <div className="flex transition-transform duration-300 ease-in-out" id="carousel-medical">
-                  <img
-                    src={medicalImages[medicalIndex]}
-                    alt={`Medical Project - Slide ${medicalIndex + 1}`}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform"
-                  />
-                </div>
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
-                  {medicalImages.map((_, idx) => (
-                    <button key={idx} className={`w-2 h-2 rounded-full ${idx === medicalIndex ? "bg-chart-3" : "bg-white/40"}`}
-                      onClick={() => setMedicalIndex(idx)}
-                    />
-                  ))}
-                </div>
-                <button onClick={handleMedicalPrev} className="absolute left-2 top-1/2 -translate-y-1/2">◀</button>
-                <button onClick={handleMedicalNext} className="absolute right-2 top-1/2 -translate-y-1/2">▶</button>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="font-serif text-xl font-semibold text-foreground">Medical Management</h3>
-                <p className="text-muted-foreground text-sm">
-                  Healthcare system built with React + Django.
-                </p>
-                <div className="flex gap-2 pt-2">
-                  <Button asChild size="sm" variant="outline">
-                   <a href="https://github.com/aliaa11/MedicalProject-React-Django-" target="_blank">
-                  <Github className="w-3 h-3 mr-1" /> Backend </a> 
-                  </Button> 
-                  <Button asChild size="sm" variant="outline" className="text-xs bg-transparent border-accent/30 hover:bg-accent/10" > <a href="https://github.com/aliaa11/MedicalProject-React-Django-Backend" target="_blank"> 
-                  <Github className="w-3 h-3 mr-1" /> Frontend </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* E-learning Platform */}
-            <Card className="group overflow-hidden border-border hover:shadow-lg transition-all duration-300">
-              <div className="relative overflow-hidden">
-                <div className="flex transition-transform duration-300 ease-in-out" id="carousel-elearning">
-                  <img
-                    src={elearningImages[elearningIndex]}
-                    alt={`E-learning - Slide ${elearningIndex + 1}`}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform"
-                  />
-                </div>
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
-                  {elearningImages.map((_, idx) => (
-                    <button key={idx} className={`w-2 h-2 rounded-full ${idx === elearningIndex ? "bg-chart-5" : "bg-white/40"}`}
-                      onClick={() => setElearningIndex(idx)}
-                    />
-                  ))}
-                </div>
-                <button onClick={handleElearningPrev} className="absolute left-2 top-1/2 -translate-y-1/2">◀</button>
-                <button onClick={handleElearningNext} className="absolute right-2 top-1/2 -translate-y-1/2">▶</button>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="font-serif text-xl font-semibold text-foreground">E-learning Platform</h3>
-                <p className="text-muted-foreground text-sm">
-                  Interactive learning platform built with JS, HTML, and CSS.
-                </p>
-                <div className="flex gap-2 pt-2">
-                  <Button asChild size="sm" variant="outline">
-                    <a href="https://github.com/aliaa11/el-madrasaa" target="_blank">
-                      <Github className="w-3 h-3 mr-1" /> Repo
-                    </a>
-                  </Button>
-                  <Button asChild size="sm" variant="outline">
-                    <a href="https://el-madrasaa.netlify.app/" target="_blank">
-                      Live Demo
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Health Insurance */}
-            <Card className="group overflow-hidden border-border hover:shadow-lg transition-all duration-300">
-              <div className="relative overflow-hidden">
-                <div className="flex transition-transform duration-300 ease-in-out" id="carousel-insurance">
-                  <img
-                    src={insuranceImages[insuranceIndex]}
-                    alt={`Health Insurance - Slide ${insuranceIndex + 1}`}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform"
-                  />
-                </div>
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
-                  {insuranceImages.map((_, idx) => (
-                    <button key={idx} className={`w-2 h-2 rounded-full ${idx === insuranceIndex ? "bg-primary" : "bg-white/40"}`}
-                      onClick={() => setInsuranceIndex(idx)}
-                    />
-                  ))}
-                </div>
-                <button onClick={handleInsurancePrev} className="absolute left-2 top-1/2 -translate-y-1/2">◀</button>
-                <button onClick={handleInsuranceNext} className="absolute right-2 top-1/2 -translate-y-1/2">▶</button>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="font-serif text-xl font-semibold text-foreground">Health Insurance System</h3>
-                <p className="text-muted-foreground text-sm">
-                  Health insurance management system built with Angular + Laravel.
-                </p>
-                <div className="flex gap-2 pt-2">
-                  <Button asChild size="sm" variant="outline">
-                    <a href="https://github.com/aliaa11/Health-Insurance" target="_blank">
-                      <Github className="w-3 h-3 mr-1" /> Repo
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {/* Navigation dots */}
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
+            {itiansImages.map((_, idx) => (
+              <button
+                key={idx}
+                className={`w-2 h-2 rounded-full ${idx === itiansIndex ? "bg-primary" : "bg-white/40"} hover:bg-primary transition-colors`}
+                onClick={() => setItiansIndex(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                type="button"
+              />
+            ))}
           </div>
-
-          <div className="text-center mt-12">
-            <a
-              href="https://github.com/aliaa11"
-              className="border-primary/30 hover:bg-primary/10 bg-transparent text-primary"
-              target="_blank"
-            >
-              View All Projects on GitHub
-            </a>
-          </div>
+          {/* Navigation arrows */}
+          <button
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-primary/20 hover:bg-primary/40 text-white rounded-full p-1 opacity-100 transition-opacity backdrop-blur-sm"
+            onClick={handleItiansPrev}
+            aria-label="Previous slide"
+            type="button"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary/20 hover:bg-primary/40 text-white rounded-full p-1 opacity-100 transition-opacity backdrop-blur-sm"
+            onClick={handleItiansNext}
+            aria-label="Next slide"
+            type="button"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
         </div>
-      </section>
+        <CardContent className="p-6">
+          <div className="space-y-3">
+            <h3 className="font-serif text-xl font-semibold text-foreground">The ITIANs Community</h3>
+            <p className="text-muted-foreground text-sm">
+              A realtime community platform built with Laravel backend, React frontend, and Supabase for realtime
+              features. Includes RAG chatbot integration for enhanced user experience.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="secondary" className="text-xs bg-primary/10 text-primary border-primary/20">
+                Laravel
+              </Badge>
+              <Badge variant="secondary" className="text-xs bg-accent/10 text-accent border-accent/20">
+                React
+              </Badge>
+              <Badge variant="secondary" className="text-xs bg-primary/10 text-primary border-primary/20">
+                Supabase
+              </Badge>
+              <Badge variant="secondary" className="text-xs bg-accent/10 text-accent border-accent/20">
+                RAG Chatbot
+              </Badge>
+            </div>
+            <div className="flex gap-2 pt-2">
+              <Button
+                size="sm"
+                variant="outline"
+                className="text-xs bg-transparent border-primary/30 hover:bg-primary/10"
+                asChild
+              >
+                <a href="https://github.com/aliaa11/Graduation-Project-From-ITI-BackEnd" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-3 h-3 mr-1" />
+                  Backend
+                </a>
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                className="text-xs bg-transparent border-accent/30 hover:bg-accent/10"
+                asChild
+              >
+                <a href="https://github.com/aliaa11/Graduation-Project-From-ITI-FrontEnd" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-3 h-3 mr-1" />
+                  Frontend
+                </a>
+              </Button>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Job Board Platform */}
+      <Card className="group overflow-hidden border-border hover:shadow-lg transition-all duration-300">
+        <div className="relative overflow-hidden">
+          <div className="flex transition-transform duration-300 ease-in-out" id="carousel-job">
+            <img
+              src={jobImages[jobIndex]}
+              alt={`Job Board Platform - Slide ${jobIndex + 1}`}
+              className="w-full h-48 object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-accent/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {/* Navigation dots */}
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
+            {jobImages.map((_, idx) => (
+              <button
+                key={idx}
+                className={`w-2 h-2 rounded-full ${idx === jobIndex ? "bg-accent" : "bg-white/40"} hover:bg-accent transition-colors`}
+                onClick={() => setJobIndex(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                type="button"
+              />
+            ))}
+          </div>
+          {/* Navigation arrows */}
+          <button
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-accent/20 hover:bg-accent/40 text-white rounded-full p-1 opacity-100 transition-opacity backdrop-blur-sm"
+            onClick={handleJobPrev}
+            aria-label="Previous slide"
+            type="button"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-accent/20 hover:bg-accent/40 text-white rounded-full p-1 opacity-100 transition-opacity backdrop-blur-sm"
+            onClick={handleJobNext}
+            aria-label="Next slide"
+            type="button"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </div>
+        <CardContent className="p-6">
+          <div className="space-y-3">
+            <h3 className="font-serif text-xl font-semibold text-foreground">Job Board Platform</h3>
+            <p className="text-muted-foreground text-sm">
+              Full-featured job board enabling recruiters to post jobs and applicants to apply. Features
+              authentication, advanced job filtering, and role-based dashboards.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="secondary" className="text-xs bg-accent/10 text-accent border-accent/20">
+                Vue.js
+              </Badge>
+              <Badge variant="secondary" className="text-xs bg-primary/10 text-primary border-primary/20">
+                Laravel
+              </Badge>
+              <Badge variant="secondary" className="text-xs bg-chart-4/10 text-chart-4 border-chart-4/20">
+                MySQL
+              </Badge>
+            </div>
+            <div className="flex gap-2 pt-2">
+              <Button
+                size="sm"
+                variant="outline"
+                className="text-xs bg-transparent border-primary/30 hover:bg-primary/10"
+                asChild
+              >
+                <a href="https://github.com/omarokstar/job-board-laravel-api" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-3 h-3 mr-1" />
+                  Backend
+                </a>
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                className="text-xs bg-transparent border-accent/30 hover:bg-accent/10"
+                asChild
+              >
+                <a href="https://github.com/Esraa-mohamed1/job-board-laravel-vue" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-3 h-3 mr-1" />
+                  Frontend
+                </a>
+              </Button>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Kindergarten Management System */}
+      <Card className="group overflow-hidden border-border hover:shadow-lg transition-all duration-300">
+        <div className="relative overflow-hidden">
+          <div className="flex transition-transform duration-300 ease-in-out" id="carousel-kindergarten">
+            <img
+              src={kindergartenImages[kindergartenIndex]}
+              alt={`Kindergarten Management System - Slide ${kindergartenIndex + 1}`}
+              className="w-full h-48 object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-chart-4/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {/* Navigation dots */}
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
+            {kindergartenImages.map((_, idx) => (
+              <button
+                key={idx}
+                className={`w-2 h-2 rounded-full ${idx === kindergartenIndex ? "bg-chart-4" : "bg-white/40"} hover:bg-chart-4 transition-colors`}
+                onClick={() => setKindergartenIndex(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                type="button"
+              />
+            ))}
+          </div>
+          {/* Navigation arrows */}
+          <button
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-chart-4/20 hover:bg-chart-4/40 text-white rounded-full p-1 opacity-100 transition-opacity backdrop-blur-sm"
+            onClick={handleKindergartenPrev}
+            aria-label="Previous slide"
+            type="button"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-chart-4/20 hover:bg-chart-4/40 text-white rounded-full p-1 opacity-100 transition-opacity backdrop-blur-sm"
+            onClick={handleKindergartenNext}
+            aria-label="Next slide"
+            type="button"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </div>
+        <CardContent className="p-6">
+          <div className="space-y-3">
+            <h3 className="font-serif text-xl font-semibold text-foreground">Kindergarten Management</h3>
+            <p className="text-muted-foreground text-sm">
+              Comprehensive management system for kindergartens built with Angular frontend and Node.js backend.
+              Manages students, staff, and administrative tasks efficiently.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="secondary" className="text-xs bg-chart-3/10 text-chart-3 border-chart-3/20">
+                Angular
+              </Badge>
+              <Badge variant="secondary" className="text-xs bg-chart-4/10 text-chart-4 border-chart-4/20">
+                Node.js
+              </Badge>
+              <Badge variant="secondary" className="text-xs bg-chart-5/10 text-chart-5 border-chart-5/20">
+                MongoDB
+              </Badge>
+            </div>
+            <div className="flex gap-2 pt-2">
+              <Button
+                size="sm"
+                variant="outline"
+                className="text-xs bg-transparent border-chart-4/30 hover:bg-chart-4/10"
+                asChild
+              >
+                <a href="https://github.com/aliaa11/School_System_Node.js" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-3 h-3 mr-1" />
+                  Backend
+                </a>
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                className="text-xs bg-transparent border-chart-3/30 hover:bg-chart-3/10"
+                asChild
+              >
+                <a href="https://github.com/aliaa11/School_System" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-3 h-3 mr-1" />
+                  Frontend
+                </a>
+              </Button>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Medical Project */}
+      <Card className="group overflow-hidden border-border hover:shadow-lg transition-all duration-300">
+        <div className="relative overflow-hidden">
+          <div className="flex transition-transform duration-300 ease-in-out" id="carousel-medical">
+            <img
+              src={medicalImages[medicalIndex]}
+              alt={`Medical Project - Slide ${medicalIndex + 1}`}
+              className="w-full h-48 object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-chart-3/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {/* Navigation dots */}
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
+            {medicalImages.map((_, idx) => (
+              <button
+                key={idx}
+                className={`w-2 h-2 rounded-full ${idx === medicalIndex ? "bg-chart-3" : "bg-white/40"} hover:bg-chart-3 transition-colors`}
+                onClick={() => setMedicalIndex(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                type="button"
+              />
+            ))}
+          </div>
+          {/* Navigation arrows */}
+          <button
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-chart-3/20 hover:bg-chart-3/40 text-white rounded-full p-1 opacity-100 transition-opacity backdrop-blur-sm"
+            onClick={handleMedicalPrev}
+            aria-label="Previous slide"
+            type="button"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-chart-3/20 hover:bg-chart-3/40 text-white rounded-full p-1 opacity-100 transition-opacity backdrop-blur-sm"
+            onClick={handleMedicalNext}
+            aria-label="Next slide"
+            type="button"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </div>
+        <CardContent className="p-6">
+          <div className="space-y-3">
+            <h3 className="font-serif text-xl font-semibold text-foreground">Medical Management System</h3>
+            <p className="text-muted-foreground text-sm">
+              Healthcare management application built with React frontend and Django backend. Streamlines patient
+              records, appointments, and medical data management.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="secondary" className="text-xs bg-accent/10 text-accent border-accent/20">
+                React
+              </Badge>
+              <Badge variant="secondary" className="text-xs bg-chart-3/10 text-chart-3 border-chart-3/20">
+                Django
+              </Badge>
+              <Badge variant="secondary" className="text-xs bg-primary/10 text-primary border-primary/20">
+                PostgreSQL
+              </Badge>
+            </div>
+            <div className="flex gap-2 pt-2">
+              <Button
+                size="sm"
+                variant="outline"
+                className="text-xs bg-transparent border-chart-3/30 hover:bg-chart-3/10"
+                asChild
+              >
+                <a href="https://github.com/aliaa11/MedicalProject-React-Django-Backend" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-3 h-3 mr-1" />
+                  Backend
+                </a>
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                className="text-xs bg-transparent border-accent/30 hover:bg-accent/10"
+                asChild
+              >
+                <a href="https://github.com/aliaa11/MedicalProject-React-Django-" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-3 h-3 mr-1" />
+                  Frontend
+                </a>
+              </Button>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* E-learning Platform */}
+      <Card className="group overflow-hidden border-border hover:shadow-lg transition-all duration-300">
+        <div className="relative overflow-hidden">
+          <div className="flex transition-transform duration-300 ease-in-out" id="carousel-elearning">
+            <img
+              src={elearningImages[elearningIndex]}
+              alt={`E-learning Platform - Slide ${elearningIndex + 1}`}
+              className="w-full h-48 object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-chart-5/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {/* Navigation dots */}
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
+            {elearningImages.map((_, idx) => (
+              <button
+                key={idx}
+                className={`w-2 h-2 rounded-full ${idx === elearningIndex ? "bg-chart-5" : "bg-white/40"} hover:bg-chart-5 transition-colors`}
+                onClick={() => setElearningIndex(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                type="button"
+              />
+            ))}
+          </div>
+          {/* Navigation arrows */}
+          <button
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-chart-5/20 hover:bg-chart-5/40 text-white rounded-full p-1 opacity-100 transition-opacity backdrop-blur-sm"
+            onClick={handleElearningPrev}
+            aria-label="Previous slide"
+            type="button"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-chart-5/20 hover:bg-chart-5/40 text-white rounded-full p-1 opacity-100 transition-opacity backdrop-blur-sm"
+            onClick={handleElearningNext}
+            aria-label="Next slide"
+            type="button"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </div>
+        <CardContent className="p-6">
+          <div className="space-y-3">
+            <h3 className="font-serif text-xl font-semibold text-foreground">E-learning Platform</h3>
+            <p className="text-muted-foreground text-sm">
+              Interactive learning platform built with vanilla JavaScript, HTML, and CSS. Features course
+              management, progress tracking, and local storage for user data persistence.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="secondary" className="text-xs bg-chart-5/10 text-chart-5 border-chart-5/20">
+                HTML
+              </Badge>
+              <Badge variant="secondary" className="text-xs bg-accent/10 text-accent border-accent/20">
+                CSS
+              </Badge>
+              <Badge variant="secondary" className="text-xs bg-primary/10 text-primary border-primary/20">
+                JavaScript
+              </Badge>
+              <Badge variant="secondary" className="text-xs bg-chart-4/10 text-chart-4 border-chart-4/20">
+                Local Storage
+              </Badge>
+            </div>
+            <div className="flex gap-2 pt-2">
+              <Button
+                size="sm"
+                variant="outline"
+                className="text-xs bg-transparent border-chart-5/30 hover:bg-chart-5/10"
+                asChild
+              >
+                <a href="https://github.com/aliaa11/el-madrasaa.git" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-3 h-3 mr-1" />
+                  Repo
+                </a>
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                className="text-xs bg-transparent border-accent/30 hover:bg-accent/10"
+                asChild
+              >
+                <a href="https://el-madrasaa.netlify.app/" target="_blank" rel="noopener noreferrer">
+                  Live Demo
+                </a>
+              </Button>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Health Insurance System */}
+      <Card className="group overflow-hidden border-border hover:shadow-lg transition-all duration-300">
+        <div className="relative overflow-hidden">
+          <div className="flex transition-transform duration-300 ease-in-out" id="carousel-insurance">
+            <img
+              src={insuranceImages[insuranceIndex]}
+              alt={`Health Insurance System - Slide ${insuranceIndex + 1}`}
+              className="w-full h-48 object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {/* Navigation dots */}
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
+            {insuranceImages.map((_, idx) => (
+              <button
+                key={idx}
+                className={`w-2 h-2 rounded-full ${idx === insuranceIndex ? "bg-primary" : "bg-white/40"} hover:bg-primary transition-colors`}
+                onClick={() => setInsuranceIndex(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                type="button"
+              />
+            ))}
+          </div>
+          {/* Navigation arrows */}
+          <button
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-primary/20 hover:bg-primary/40 text-white rounded-full p-1 opacity-100 transition-opacity backdrop-blur-sm"
+            onClick={handleInsurancePrev}
+            aria-label="Previous slide"
+            type="button"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary/20 hover:bg-primary/40 text-white rounded-full p-1 opacity-100 transition-opacity backdrop-blur-sm"
+            onClick={handleInsuranceNext}
+            aria-label="Next slide"
+            type="button"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </div>
+        <CardContent className="p-6">
+          <div className="space-y-3">
+            <h3 className="font-serif text-xl font-semibold text-foreground">Health Insurance System</h3>
+            <p className="text-muted-foreground text-sm">
+              Comprehensive health insurance management system developed during university studies. Built with
+              Angular frontend and Laravel backend for robust data management.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="secondary" className="text-xs bg-chart-3/10 text-chart-3 border-chart-3/20">
+                Angular
+              </Badge>
+              <Badge variant="secondary" className="text-xs bg-primary/10 text-primary border-primary/20">
+                Laravel
+              </Badge>
+              <Badge variant="secondary" className="text-xs bg-chart-4/10 text-chart-4 border-chart-4/20">
+                MySQL
+              </Badge>
+            </div>
+            <div className="flex gap-2 pt-2">
+              <Button
+                size="sm"
+                variant="outline"
+                className="text-xs bg-transparent border-primary/30 hover:bg-primary/10"
+                asChild
+              >
+                <a href="https://github.com/aliaa11/Health-Insurance" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-3 h-3 mr-1" />
+                  Repo
+                </a>
+              </Button>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+
+    <div className="text-center mt-12">
+      <a
+        href='https://github.com/aliaa11'
+        className="border-primary/30 hover:bg-primary/10 bg-transparent text-primary"
+      >
+        View All Projects on GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
 
       {/* Experience & Education Section */}
       <section id="experience" className="py-20">
